@@ -1,5 +1,4 @@
-html,
-body {
+html {
 	margin: 0; 
 	padding: 0;
 	width: 100%;
@@ -9,6 +8,10 @@ body {
 body {
 	background-color: #f4f7ff;
 	background-image: radial-gradient(#eed1f6, #f4f7ff);
+	width: 100%;
+	height: auto;
+	margin: 0; 
+	padding: 0;	
 }
 
 body, 
@@ -48,7 +51,8 @@ h2 {
 	max-width: 900px;
 	height: auto;
 	margin: 0 auto;
-	margin-top: 10%;
+	margin-top: 5%;
+	margin-bottom: 5%;
 	box-shadow: 0px 0px 30px #00000057;
 	border-radius: 10px;
 
@@ -68,6 +72,8 @@ h2 {
 	text-align: left;
 	padding: 40px;
 	padding-top: 100px;
+	padding-bottom: 60px;
+	height: auto;
 
 }
 
@@ -202,11 +208,38 @@ input[name="rememberme"] {
 
 }
 
-@media screen and (max-width: 600px) {
-
-	.grid {
-		grid-template-columns: 60% 40%;
+@media screen and (max-width: 760px) {
+	.newAccount {
+		display: block;
 	}
 
+}
+
+@media screen and (max-width: 640px) {
+
+	.grid {
+		grid-template-columns: 100%;
+		grid-template-rows: 20vh auto;
+	}
+
+	.content {
+		grid-row-start: 2;
+		padding: 5% 20% 15% 20%;
+	}
+
+	.featureImage {
+		grid-row-start: 1;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		border-bottom-right-radius: 0px;
+	}
+
+}
+
+@media screen and (max-width: 450px) {
+	.content {
+		grid-row-start: 2;
+		padding: 5% 10% 15% 10%;
+	}
 }
 
