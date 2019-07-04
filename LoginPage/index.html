@@ -10,38 +10,74 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="grid">
-			<div class="content">
-				<h1>Welcome back</h1>
-				<h2>Start the Adventure</h2>
+		<div class="card">
+			<div class="grid front">
+				<div class="content">
+					<h1>Welcome back</h1>
+					<h2>Start the Adventure</h2>
 
-				
-				<input class="username" name="username" type="text" placeholder="Username or email">
-				
-				<input class="password" name="password" type="text" placeholder="Password">
 
-				<section class="formChecks">
-					<label class="remember">
-						<input type="checkbox" name="rememberme"> 
-						<span>Remember Me</span>
-						<span class="checkbox"></span>
-					</label>
+					<input class="username" name="username" type="text" placeholder="Username or email">
 
-					<span class="forgot"><a href="#">Forgot password?</a></span>
-				</section>
+					<input class="password" name="password" type="password" placeholder="Password">
 
-				<button id="login">Login</button>
+					<section class="formChecks">
+						<label class="remember">
+							<input id="remember" type="checkbox" name="rememberme">
+							<span>Remember Me</span>
+							<span class="checkbox"></span>
+						</label>
 
-				<button class="google"><img class="icon" src="images/g_icon.svg">Login with Google</button>
+						<span class="forgot"><a href="#">Forgot password?</a></span>
+					</section>
 
-				<button class="facebook"><img  class="icon"src="images/f_icon.svg">Login with Facebook</button>
+					<button id="login">Login</button>
 
-				<span class="newAccount">Don't have an account? <a href="#" class="newAccount">Click here</a></span>
+					<button class="google"><img class="icon" src="images/g_icon.svg">Login with Google</button>
 
-			</div> <!-- content -->
-			<img class="featureImage" src="images/feature.png">
-			</img>
-		</div> <!-- grid -->
+					<button class="facebook"><img  class="icon"src="images/f_icon.svg">Login with Facebook</button>
+
+					<span class="newAccount">Don't have an account? <a href="#" class="signUpNav">Click here</a></span>
+
+				</div> <!-- content -->
+				<img class="featureImage" src="images/feature.png">
+				</img>
+			</div> <!-- grid -->
+			<div class="back grid">
+					<div class="content">
+						<h1>Hello there</h1>
+						<h2>Start the Adventure</h2>
+
+
+						<input class="username" name="username" type="text" placeholder="Username or email">
+
+						<input class="password" name="password" type="password" placeholder="Password">
+
+						<section class="formChecks">
+							<label class="remember">
+								<input id="remember" type="checkbox" name="rememberme">
+								<span>Remember Me</span>
+								<span class="checkbox"></span>
+							</label>
+						</section>
+
+						<button id="signUp">Sign Up</button>
+
+						<button class="google"><img class="icon" src="images/g_icon.svg">Sign Up with Google</button>
+
+						<button class="facebook"><img  class="icon"src="images/f_icon.svg">Sign Up with Facebook</button>
+
+						<span class="newAccount">Already have an account? <a href="#" class="logInNav">Click here</a></span>
+
+					</div> <!-- content -->
+					<img class="featureImage" src="images/feature.png">
+					</img>
+			</div><!-- back -->
+		</div> <!-- card -->
 	</div> <!-- wrapper -->
 </body>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/jqueryflip.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
