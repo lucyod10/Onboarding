@@ -53,6 +53,7 @@ function checkInput () {
       password === "lucy") {
         console.log("success");
         clearError();
+        slideUp();
       }
   else {
     if (username != u) {
@@ -109,6 +110,11 @@ $(".signUpNav").on("click", flip);
 $(".logInNav").on("click", flip);
 function flip (event) {
   $(".card").toggleClass("flip");
+}
+
+function slideUp () {
+  $(".card").addClass("slideUp");
+  $(".welcome").addClass("slideIn");
 }
 
 
