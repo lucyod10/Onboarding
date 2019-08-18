@@ -1,4 +1,3 @@
-// TODO make whole screen shake when you input incorect info
 //To handle transform using the .animate fn
 //set animate function, then put any value in the object, deining a number after it. This number defines the limit of the animation
 //not really sure why it works that way
@@ -42,15 +41,19 @@ function shake () {
 //TODO red error message come up if information incomplete
 const loginBtn = $("#login").on("click", checkInput);
 function checkInput () {
-  const u = "Lucy";
-  const p = "lucy";
+
+  const u = $(".username").val();
+  const p = $(".password").val();
   //check all input fields.
-  const username = $(".username").val();
-  const password = $(".password").val();
+  const username = localStorage.getItem("username");
+  const password = localStorage.getItem("password");
+
+  localStorage.getItem("username", u);
+  localStorage.getItem("password", p);
 
   let message = [];
-  if (username === "Lucy" &&
-      password === "lucy") {
+  if (username === u &&
+      password === p) {
         console.log("success");
         clearError();
         slideUp();
@@ -71,6 +74,24 @@ function checkInput () {
   }
 }
 
+const signupBtn = $("#signUp").on("click", signUp);
+function signUp () {
+  const u = $(".signInUsername").val();
+  const p = $(".signInPassword").val();
+  //check all input fields.
+  const username = localStorage.getItem("username");
+  const password = localStorage.getItem("password");
+
+  localStorage.setItem("username", u);
+  localStorage.setItem("password", p);
+
+  // TODO if remember me, save in loading.
+
+  // TODO Go to next page.
+  window.location.href = "notes.html";
+}
+
+
 function errorMsg (error) {
   //the .length can be used to check if the element exists on the page yet
   if ($(".error").length) {
@@ -90,21 +111,6 @@ function clearError () {
   }
 }
 
-//jquery flip -- wont flip back
-// $(".signUpNav").on("click", {num: "180"}, flip);
-// $(".logInNav").on("click", {num: "-180"}, flip);
-// function flip (event) {
-//   $(".card").animate({ transform: event.data.num }, {
-//       step: function(now, fx) {
-//         console.log(now);
-//         $(this).css('-webkit-transform','rotateY('+now+'deg)');
-//         $(this).css('-moz-transform','rotateY('+now+'deg)');
-//         $(this).css('transform','rotateY('+now+'deg)');
-//       },
-//         duration: 2000
-//   },'linear');
-// }
-
 //native flip
 $(".signUpNav").on("click", flip);
 $(".logInNav").on("click", flip);
@@ -117,8 +123,9 @@ function slideUp () {
   $(".welcome").addClass("slideIn");
 }
 
-
-
+$(".forgot").on("click", function () {
+  localStorage.clear();
+})
 
 
 
